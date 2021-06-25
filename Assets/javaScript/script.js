@@ -22,12 +22,18 @@ function generatePassword() {
   else {
     //check if special characters included
     var hasSpecialCharacter = confirm("Click ok to confirm special characters in your password");
-    
+
     var hasNumbers = confirm("Click ok to confirm including numbers.");
 
     var hasLowerCase = confirm("Click ok to confirm including lower case.");
 
     var hasUpperCase = confirm("Click ok to confirm including upper case.");
+
+    //checking at least one is picked then calling the function if none are selected
+    if (!hasSpecialCharacter && !hasNumbers && !hasLowerCase && !hasUpperCase) {
+      alert('Please select at least one criteria');
+      generatePassword()
+    }
 
     if (hasSpecialCharacter) {
       final = final.concat(Special);
