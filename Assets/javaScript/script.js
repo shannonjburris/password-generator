@@ -29,32 +29,32 @@ function generatePassword() {
 
     var hasUpperCase = confirm("Click ok to confirm including upper case.");
 
-    //checking at least one is picked then calling the function if none are selected
+    //checking at least one is picked and restart function
     if (!hasSpecialCharacter && !hasNumbers && !hasLowerCase && !hasUpperCase) {
       alert('Please select at least one criteria');
-      generatePassword()
+      generatePassword();
     }
+    else {
+      if (hasSpecialCharacter) {
+        final = final.concat(Special);
+      }
+      if (hasNumbers) {
+        final = final.concat(Numbers)
+      }
+      if (hasLowerCase) {
+        final = final.concat(lowerCase)
+      }
+      else if (hasUpperCase) {
+        final = final.concat(upperCase)
+      }
 
-    if (hasSpecialCharacter) {
-      final = final.concat(Special);
-    }
-    if (hasNumbers) {
-      final = final.concat(Numbers)
-    }
-    if (hasLowerCase) {
-      final = final.concat(lowerCase)
-    }
-    else if (hasUpperCase) {
-      final = final.concat(upperCase)
-    }
-
-    for (i = 0; i < passwordLength; i++) {
-      var randomIndexValue = final[Math.floor(Math.random() * final.length)];
-      finalVar += randomIndexValue;
-
+      for (i = 0; i < passwordLength; i++) {
+        var randomIndexValue = final[Math.floor(Math.random() * final.length)];
+        finalVar += randomIndexValue;
+      } 
+     return finalVar; 
     }
   }
-
 }
 
 
