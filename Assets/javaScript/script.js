@@ -47,20 +47,6 @@ function generatePassword() {
       finalVar += randomIndexValue;
 
     }
-
-    if (hasSpecialCharacter) {
-      final = final.concat(Special);
-    }
-    if (hasNumbers) {
-      final = final.concat(Numbers)
-    }
-    if (hasLowerCase) {
-      final = final.concat(lowerCase)
-    }
-    else if (hasUpperCase) {
-      final = final.concat(upperCase)
-    }
-    return finalVar;
   }
 
 }
